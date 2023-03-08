@@ -1,7 +1,7 @@
 public interface TestInterface {
 
-	void foo();
+    void foo();
 
-	void bar();
+    void bar();
 
 }
