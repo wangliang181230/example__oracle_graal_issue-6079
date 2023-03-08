@@ -1,4 +1,4 @@
-title "HelloReflection-Build-with-config"
+title "ProxyReflectionExample-Build-Native-Image"
 
 javac TestInterface.java ProxyReflectionExample.java -d ..\..\..\target\classes
 

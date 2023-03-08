@@ -12,6 +12,7 @@ public class ProxyReflectionExample {
 			});
 
 		try {
+			// It will throw `NoSuchMethodException` in `native-image`.
 			proxyObj.getClass().getMethod("foo").invoke(proxyObj);
 			proxyObj.getClass().getMethod("bar").invoke(proxyObj);
 		} catch (Throwable t) {

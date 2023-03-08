@@ -1,4 +1,4 @@
-title "ProxyReflectionExample.exe"
+title "start ProxyReflectionExample.exe"
 
 start ..\..\..\target\ProxyReflectionExample.exe
 

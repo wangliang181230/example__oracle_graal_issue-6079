@@ -1,4 +1,4 @@
-title "ProxyReflectionExample.class"
+title "java ProxyReflectionExample.class"
 
 javac TestInterface.java ProxyReflectionExample.java -d ..\..\..\target\classes
 
