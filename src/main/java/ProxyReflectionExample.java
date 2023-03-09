@@ -1,3 +1,4 @@
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 public class ProxyReflectionExample {
@@ -7,14 +8,19 @@ public class ProxyReflectionExample {
             ProxyReflectionExample.class.getClassLoader(),
             new Class[] { TestInterface.class },
             (proxy, method, args1) -> {
-                System.out.println("Method: " + method.getName());
+                System.out.println("Method: " + method.getName() + ",     Declaring Class: " + method.getDeclaringClass().getName());
                 return null;
             });
 
         try {
             // It will throw `NoSuchMethodException` in `native-image`.
-            proxyObj.getClass().getMethod("foo").invoke(proxyObj);
-            proxyObj.getClass().getMethod("bar").invoke(proxyObj);
+            Method method = proxyObj.getClass().getMethod("foo");
+            System.out.println("Method: " + method.getName() + ",     Declaring Class: " + method.getDeclaringClass().getName());
+            method.invoke(proxyObj);
+
+            method = proxyObj.getClass().getMethod("bar");
+            System.out.println("Method: " + method.getName() + ",     Declaring Class: " + method.getDeclaringClass().getName());
+            method.invoke(proxyObj);
         } catch (Throwable t) {
             t.printStackTrace();
         }
